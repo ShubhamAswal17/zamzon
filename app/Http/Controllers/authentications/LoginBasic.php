@@ -24,6 +24,8 @@ class LoginBasic extends Controller
             'password' => $request->input('password')
         ];
       if (Auth::attempt($credentials)) {
+        
+        $request->session()->regenerate();
        if ($request->ajax()) {
 
                 return response()->json([
@@ -49,6 +51,12 @@ class LoginBasic extends Controller
             ]);
     
   }
+  public function logout(Request $request){
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/')->with('success', 'Logout successful');
+  }
 }
-
+ 
 
