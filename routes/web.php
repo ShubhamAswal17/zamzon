@@ -18,6 +18,8 @@ use App\Http\Middleware\PreventBackHistory;
 
 
 // authentication
+
+
 Route::get('/',[LoginBasic::class, 'index'])->name('auth-login');
 Route::post('/login',[LoginBasic::class, 'login'])->name('login');
 Route::post('/logout',[LoginBasic::class, 'logout'])->name('logout');

@@ -31,7 +31,7 @@ $customizerHidden = 'customizer-hide';
       e.preventDefault(); // Prevent the default form submission
       //alert('Form submitted!'); // Alert to confirm form submission
       var formData = $('#formAuthentication').serialize(); // Serialize form data
-      alert(formData); // Log the serialized form data to the console
+      //alert(formData); // Log the serialized form data to the console
       $.ajax({
         url:"{{ route('login') }}", // URL to send the POST request to
         method:"POST", // HTTP method
