@@ -208,7 +208,27 @@ $(document).ready(function() {
                 <div class="col-6 col-md-12">
                     <label class="form-label">Booking Status</label>
 
-                    <input type="text" name="bookingStatus" class="form-control" id="bookingStatus" value="{{ $booking->status }}">
+                  
+
+                    <select name="bookingStatus" id="status" class="form-select" required>
+                        @if($booking->status == 'hold')
+                        <option value="hold" selected>
+                            hold
+                        </option>
+                        <option value="booked">
+                            booked
+                        </option>
+                        @else
+                         <option value="hold" >
+                            hold
+                        </option>
+                        <option value="booked" selected>
+                            booked
+                        </option>
+                        @endif
+                    </select>
+
+
                 </div>
 
             </div>

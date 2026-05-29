@@ -17,5 +17,6 @@ class bookingsController extends Controller
   }
   public function update(Request $request){
         print_r($request->all());
+        echo $request->booking_id; 
   }
 }

@@ -85,15 +85,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </thead>
 
                 <tbody>
-                        @foreach($bookings as $booking)
+                        @foreach($payments as $payment)
                     <tr>
-                        <td>{{ $booking->id }}</td>
-                        <td>{{ $booking->customer_name }}</td>
-                        <td>{{ $booking->id }}</td>
-                        <td>{{ $booking->payment_date }}</td>
-                        <td>{{ $booking->payment_amount }}</td>
-                        <td>{{ $booking->payment_mode }}</td>
-                        <td>Payment Status</td>
+                        <td>{{ $payment->id }}</td>
+                        <td>{{$payment->booking->customer_id }}</td>
+                         <!-- <td>{{ $payment->customer->name }}</td>
+                        <td>{{$payment->booking->vehicle_name }}</td>  -->
+                       
+                        <td>{{ $payment->booking_id }}</td>
+                        <td>{{ $payment->payment_date }}</td>
+                        <td>{{ $payment->payment_Amount }}</td>
+                        <td>{{ $payment->payment_mode }}</td>
+                        <td>{{ $payment->payment_status }}</td>
                   
                     </tr>
                     @endforeach
